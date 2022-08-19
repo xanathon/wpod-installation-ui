@@ -40,7 +40,38 @@
 				<option value="ip_address">IP Adress (recommended for OSKR bots)</option>
 				<option value="domain">Domain</option>
 				<option value="escapepod_local">escapepod.local (recommended for production bots)</option>				
-			</select><br>				
+			</select><br>	
+			<h3>Webserver HTTP Port</h3>
+			<p>What port would you like to set for the HTTP webserver used for custom intents, configuration, etc. </p>			
+            <label for="HTTPsettings">Webserver HTTP Port:</label>
+            <input type="text" name="HTTPsettings" id="HTTPsettings" value="8080"><br>
+			<h3>Weather API</h3>
+			<p>Would you like to setup weather commands?This involves creating a free account at <a href="https://weatherapi.com/" target="_blank">weatherapi.com</a> and putting in your API key here. This is optional.</p>			
+            <label for="weatherSettings">Do you want to setup weather API?:</label>
+			<select name="weatherSettings" id="weatherSettings" form="weatherSettings">
+				<option value="weather_no">No</option>
+				<option value="weather_yes">Yes</option>
+			</select><br>
+            <label for="APIkey">Weather API Key</label>
+            <input type="text" name="APIkey" id="APIkey" value=""><br>			
+			<h3>Knowledge Graph</h3>
+			<p>Would you like to setup Knowledge Graph ("I have a question")? This involves creating a free account at <a href="https://houndify.com/" target="_blank">houndify.com</a> and putting in your Client Key and Client ID here.<br /> Note: It may look like you only get a trial, but there is an actual free tier with 100 free requests per day.<br />This is optional.</p>			
+            <label for="knowledgeSettings">Do you want to setup Knowledge Graph?:</label>
+			<select name="knowledgeSettings" id="knowledgeSettings" form="knowledgeSettings">
+				<option value="houndify_no">No</option>
+				<option value="houndify_yes">Yes</option>
+			</select><br>
+            <label for="HoundifyClientID">Houndify Client ID</label>
+            <input type="text" name="HoundifyClientID" id="HoundifyClientID" value=""><br>			
+            <label for="HoundifyClientKey">Houndify Client Key</label>
+            <input type="text" name="HoundifyClientKey" id="HoundifyClientKey" value=""><br>		
+			<h3>Temperature Unit</h3>
+			<p>What temperature unit would you like to use?</p>			
+            <label for="tempUnitSettings">Temperature Unit:</label>
+			<select name="tempUnitSettings" id="tempUnitSettings" form="tempUnitSettings">
+				<option value="tempUnit_Celsius">Celsius</option>
+				<option value="tempUnitFahrenheit">Fahrenheit</option>
+			</select><br>			
         </form>
         <button onclick="doSomething()">Start</button>
     <hr>
