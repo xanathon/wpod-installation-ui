@@ -9,73 +9,42 @@
   <div id="outer">
     <div id="content" class="">
 	<img src="img/WirePodLogo.jpg" />	
-    <h1>Wire-Pod Interface</h1>
+    <h2>Wire-Pod Installation UI</h2>
+	<p>It is recommended you read <a href="https://github.com/kercre123/wire-pod/blob/main/README.md" target="_blank">README.md</a></p>
+	<p>if you have configured everything here, just click the start button to start the installation</p>
+	<p>If you are unsure what to do, just select the recommended option.</p>	
     <hr>
-    <h2>Add a custom intent</h2>
-    <p>It is recommended you read <a href="https://github.com/kercre123/wire-pod/blob/main/README.md" target="_blank">README.md</a></p>
-        <div id="addIntentStatus"></div>
-        <form id="intentAddForm">
-            <label for="nameAdd">Custom intent name:</label>
-            <input type="text" name="nameAdd" id="nameAdd"><br>
-            <label for="descriptionAdd">Custom intent description:</label>
-            <input type="text" name="descriptionAdd" id="descriptionAdd"><br>
-            <label for="utterancesAdd">Utterances that will trigger the intent (separated by ,):</label>
-            <input type="text" name="utterancesAdd" id="utterancesAdd"><br>
-            <div id="intentAddSelect"></div>
-            <label for="paramnameAdd">Intent parameter name (not required):</label>
-            <input type="text" name="paramnameAdd" id="paramnameAdd"><br>
-            <label for="paramvalueAdd">Intent parameter value (not required):</label>
-            <input type="text" name="paramvalueAdd" id="paramvalueAdd"><br>
-            <label for="execAdd">Path to script/program to execute after sending intent:</label>
-            <input type="text" name="execAdd" id="execAdd"><br>
-            <label for="execAdd">Arguments for program (seperated by ,)</label>
-            <input type="text" name="execAddArgs" id="execAddArgs" size="50"><br>
+    <h3>Basic installation settings</h3>
+
+        <form id="getStartSettings">
+            <label for="basicSettings">Select installation type:</label>
+			<select name="basicSettings" id="basicSettings" form="basicSettings">
+				<option value="1">Full Setup (recommended)</option>
+				<option value="2">Just build vic-cloud</option>
+				<option value="3">Just build chipper</option>
+				<option value="4">Just build get STT (voice) stuff</option>
+				<option value="5">Just generate certs</option>
+				<option value="6">Just create source.sh file and config for bot</option>
+			</select><br>
+			<h3>Language model settings</h3>
+			<p>Here you can choose between two voice recognition models.<br />The first one has a large vocabulary, it is faster, less accurate and has about 100 MB<br />The second one has a huge vocabulary, it is slower, more accurate but handles fast speech better, it has about 900 MB</p>
+            <label for="voiceSettings">Select voice model:</label>
+			<select name="voiceSettings" id="voiceSettings" form="voiceSettings">
+				<option value="large_vocabulary">Large Vocabulary</option>
+				<option value="huge_vocabulary">Huge Vocabulary</option>
+			</select><br>		
+			<h3>Wire-Pod Domain Name or IP</h3>
+			<p>Would you like to use an IP address, domain or a hostname for the Wire-Pod? Or would you like to use escapepod.local?<br />The IP address is recommended for OSKR Vectors<br />escapepod.local is recommended for production Vectors.</p>
+            <label for="hostnameSettings">Select voice model:</label>
+			<select name="hostnameSettings" id="hostnameSettings" form="hostnameSettings">
+				<option value="ip_address">IP Adress (recommended for OSKR bots)</option>
+				<option value="domain">Domain</option>
+				<option value="escapepod_local">escapepod.local (recommended for production bots)</option>				
+			</select><br>				
         </form>
-        <button onclick="sendIntentAdd()">Add intent</button>
+        <button onclick="doSomething()">Start</button>
     <hr>
-    <h2>Edit a custom intent</h2>
-    <div id="editSelect"></div>
-    <div id="editIntentStatus"></div><br>
-    <button onclick="editFormCreate()">Start editing selected intent</button>
-    <div id="editIntentForm"></div>
-    <hr>
-    <h2>Delete a custom intent</h2>
-    <div id="deleteSelect"></div>
-    <div id="deleteIntentStatus"></div><br>
-    <button onclick="deleteSelectedIntent()">Delete selected intent</button>
-    <hr>
-    <h2>Add a bot configuration</h2>
-    <div id="botAddStatus"></div>
-    <form id="botAddForm">
-        <label for="esnAdd">Bot S/N (ex. 0060059b):</label>
-        <input type="text" name="esnAdd" id="esnAdd"><br>
-        <label for="locationAdd">Location:</label>
-        <input type="text" name="locationAdd" id="locationAdd"><br>
-        <label for="unitsAdd">Temperature Unit:</label>
-        <select name="unitsAdd" id="unitsAdd" form="botAddForm">
-            <option value="C">Celsius</option>
-            <option value="F">Fahrenheit</option>
-        </select><br>
-        <label for="firmwarePrefixAdd">Firmware:</label>
-        <select name="firmwarePrefixAdd" id="firmwarePrefixAdd" form="botAddForm">
-            <option value="1.6">1.6 and above</option>
-            <option value="1.5">1.0 - 1.5</option>
-            <option value="0.11">0.14 and below</option>
-        </select>
-    </form>
-    <button onclick="sendBotAdd()">Add bot</button>
-    <hr>
-    <h2>Edit a bot configuration</h2>
-    <div id="botEditSelect"></div>
-    <div id="botEditStatus"></div><br>
-    <button onclick="editBotFormCreate()">Start editing selected bot</button>
-    <div id="botEditForm"></div>
-    <hr>
-    <h2>Delete a bot configuration</h2>
-    <div id="botDeleteSelect"></div>
-    <div id="botDeleteStatus"></div><br>
-    <button onclick="deleteSelectedBot()">Delete selected bot</button>
-    <hr>
+    
 </div>	
 </div>
 </body>
